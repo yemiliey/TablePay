@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "api.go",
+        "cloverpaymentpayload.go",
+        "cloverpaymenttype.go",
+        "resources.go",
+    ],
+    importpath = "github.com/tablepay/api/design",
+    visibility = ["//platform/tablepay:__subpackages__"],
+    deps = [
+        "//vendor/github.com/goadesign/goa/design:go_default_library",
+        "//vendor/github.com/goadesign/goa/design/apidsl:go_default_library",
+    ],
+)

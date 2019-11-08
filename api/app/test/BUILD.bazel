@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "assets_testing.go",
+        "tablepay_testing.go",
+    ],
+    importpath = "github.com/zenreach/platypus/platform/tablepay/api/app/test",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//platform/tablepay/api/app:go_default_library",
+        "//vendor/github.com/goadesign/goa:go_default_library",
+        "//vendor/github.com/goadesign/goa/goatest:go_default_library",
+    ],
+)
